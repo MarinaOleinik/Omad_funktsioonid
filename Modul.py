@@ -18,12 +18,12 @@ def arithmetic(a: float,b:float,c:str):
         else:
             r="Div/0"
     else:
-        r="Tundnatu sym"
+        r="Tundmatu sym"
     return r
 
 def is_year_leap(aasta: int):
     """Liigaasta leidmine
-    Tagastab true kui aasta on liigaasta ja False kui ei ole
+    Tagastab True kui aasta on liigaasta ja False kui ei ole
     :param int aasta: Aasta number
     :rtype bool: Funktsioni vastus loogilises formaadis
     """
@@ -32,7 +32,22 @@ def is_year_leap(aasta: int):
     else:
         vastus=False
     return vastus
-
+def season(kuu:int)->str:
+    """Пишем от 1 до 12 месяцев и программа определяет сезон по месяцам
+    :param int kuu: kuu järjekordne number
+    :rtype str: hooaja nimetus
+    """
+    if kuu==12 or 0<kuu<3:
+        rez="Зима"
+    elif 2<kuu<6:
+        rez="Весна"
+    elif 5<kuu<9:
+        rez="Лето"
+    elif 8<kuu<12:
+        rez="Осень"
+    else:
+        rez="Viga!"
+    return rez
 def xor_cipher(string: str, key:str)->str:
     """Tavaline sõna kodeeritakse
     """

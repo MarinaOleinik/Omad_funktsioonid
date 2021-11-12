@@ -13,7 +13,9 @@ while True:
         rezult=is_year_leap(int(input("Sisesta aasta: ")))
         print(rezult)
     elif v.upper()=="X":
-        rezult=xor_cipher(input("Sisesta text"), input("Sisesta võti: "))
+        print("Kodeerimine".center(60,"*"))
+        rezult=xor_cipher(input("Sisesta text: "), input("Sisesta võti: "))
         print(rezult)
-        rezult=xor_uncipher(input("Sisesta text"), input("Sisesta võti: "))
-        print(rezult)
+        print("Dekodeerimine".center(60,"*"))
+        de_rezult=xor_uncipher(rezult, input("Sisesta võti: "))
+        print(de_rezult)
