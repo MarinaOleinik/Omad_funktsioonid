@@ -32,3 +32,27 @@ def is_year_leap(aasta: int):
     else:
         vastus=False
     return vastus
+
+def xor_cipher(string: str, key:str)->str:
+    """Tavaline sõna kodeeritakse
+    """
+    result = ''
+    temp = int()
+    for i in range(len(string)):
+        temp = ord(string[i]) #näitab sümboli kood
+        for j in range(len(key)):
+            temp ^= ord(key[j])
+        result += chr(temp)
+    return result
+
+def xor_uncipher(string:str, key: str)->str:
+    """Kodeeritud text dekodeeritakse
+    """
+    result = ''
+    temp = []
+    for i in range(len(string)):
+        temp.append(string[i])
+        for j in reversed(range(len(key))):
+            temp[i] = chr(ord(key[j]) ^ ord(temp[i]))
+        result += temp[i]
+    return result

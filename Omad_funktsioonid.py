@@ -12,3 +12,8 @@ while True:
     elif v.upper()=="Y":
         rezult=is_year_leap(int(input("Sisesta aasta: ")))
         print(rezult)
+    elif v.upper()=="X":
+        rezult=xor_cipher(input("Sisesta text"), input("Sisesta võti: "))
+        print(rezult)
+        rezult=xor_uncipher(input("Sisesta text"), input("Sisesta võti: "))
+        print(rezult)
