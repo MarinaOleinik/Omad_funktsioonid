@@ -4,28 +4,22 @@ def arithmetic(a: float,b:float,c:str):
     :param float a: Esimene arv
     :param float b: Teine arv
     :param str c: Aritmeetiline tehing
-    :rtype var: Märamata tüüb
+    :rtype: var Märamata tüüb
     """
-    if c=="+":
-        r=a+b
-    elif c=="-":
-        r=a-b
-    elif c=="*":
-        r=a*b
-    elif c=="/":
-        if b!=0:
-            r=a/b
+    if c in ["+","-","*","/"]:
+        if c=="/" and b==0:
+            vastus="Div/0"
         else:
-            r="Div/0"
+            vastus=eval(str(a)+c+str(b))
     else:
-        r="Tundmatu sym"
-    return r
+        vastus="Tundmatu tehe!"
+    return vastus
 
 def is_year_leap(aasta: int):
     """Liigaasta leidmine
     Tagastab True kui aasta on liigaasta ja False kui ei ole
     :param int aasta: Aasta number
-    :rtype bool: Funktsioni vastus loogilises formaadis
+    :rtype: bool Funktsioni vastus loogilises formaadis
     """
     if aasta%4==0:
         vastus=True
@@ -38,13 +32,13 @@ def season(kuu:int)->str:
     :rtype str: hooaja nimetus
     """
     if kuu==12 or 0<kuu<3:
-        rez="Зима"
+        rez="Talv"
     elif 2<kuu<6:
-        rez="Весна"
+        rez="Kevad"
     elif 5<kuu<9:
-        rez="Лето"
+        rez="Suvi"
     elif 8<kuu<12:
-        rez="Осень"
+        rez="Sügis"
     else:
         rez="Viga!"
     return rez
